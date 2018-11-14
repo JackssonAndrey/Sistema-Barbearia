@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
-                        <a class="nav-link" href="painel.php">Agenda <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="agenda.php">Agenda <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="cliente.php">Clientes</a>
@@ -164,9 +164,23 @@
                                     data-whateverconheceu="<?php echo $row_cliente['como_conheceu'] ?>" data-whateverobs="<?php echo $row_cliente['observacoes'] ?>"
                                     data-whateversexo="<?php echo $row_cliente['sexo'] ?>" data-whateverrua="<?php echo $row_cliente['rua'] ?>" data-whateverbairro="<?php echo $row_cliente['bairro'] ?>"
                                     data-whatevernumero="<?php echo $row_cliente['numero'] ?>">Editar</button></td>
-                                    <td><a href="deleta_cliente.php?id=<?php echo $row_cliente['id']?>"><button class="btn btn-danger">Apagar</button></a></td>
+                                    <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm">Apagar</button></td>
                                     <td><button class="btn btn-primary" data-toggle="modal" data-target="#modal_detalhes <?php echo $row_cliente['id'] ?>">Detalhes</button></td>
                                 </tr>
+                                <!-- modal de confirmação de deleção -->
+                                <div class="modal fade" id="confirm" role="dialog">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                        <div class="modal-body">
+                                            <p> Deseja relamente apagar o usuário?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="deleta_cliente.php?id=<?php echo $row_cliente['id']?> "><button type="button" class="btn btn-danger" id="delete" >Apagar Registro</button></a>
+                                            <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Modal detalhes cliente-->
                                 <div class="modal fade" id="modal_detalhes <?php echo $row_cliente['id']?>" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-xl">

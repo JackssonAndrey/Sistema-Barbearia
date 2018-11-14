@@ -7,5 +7,12 @@ body {
 }
 #calendar {
     max-width: 900px;
-    margin: 30px auto;
+    margin: 50px auto;
+}
+.detalhes-evento{
+	display: block;
+}
+
+.form-editar{
+	display: none;
 }

@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
-                        <a class="nav-link" href="painel.php">Agenda <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="agenda.php">Agenda <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="cliente.php">Clientes</a>

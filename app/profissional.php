@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
-                        <a class="nav-link" href="painel.php">Agenda <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="agenda.php">Agenda <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="cliente.php">Clientes</a>
@@ -122,11 +122,25 @@
                         <td><button class="btn btn-primary" data-toggle="modal" data-target="#modal_editar" data-whatever="<?php echo $row_funcionario['id'] ?>" 
                             data-whatevernome="<?php echo $row_funcionario['nome_profissional'] ?>" data-whatevertelefone="<?php echo $row_funcionario['telefone_profissional'] ?>"
                             data-whateveraniversario="<?php echo $row_funcionario['aniversario_profissional'] ?>" data-whatevercargo="<?php echo $row_funcionario['cargo'] ?>">Editar</button></td>
-                        <td><a href="deleta_profissional.php?id=<?php echo $row_funcionario['id'] ?>"><button class="btn btn-danger">Apagar</button></a></td>
+                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm">Apagar</button></td>
                     </tr>
                 <?php }?> 
             </tbody>
         </table>
+        <!-- modal de confirmação de deleção -->
+        <div class="modal fade" id="confirm" role="dialog">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                <div class="modal-body">
+                    <p> Deseja relamente apagar o profissional?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="deleta_profissional.php?id=<?php echo $row_profissional['id']?> "><button type="button" class="btn btn-danger" id="delete" >Apagar Registro</button></a>
+                    <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+                </div>
+                </div>
+            </div>
+        </div>
         <!-- modal para editar as informaçoes do profissional -->
         <div class="modal fade" id="modal_editar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

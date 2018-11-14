@@ -15,7 +15,7 @@
 
         if ($row == 1) {
             $_SESSION['usuario'] = $usuario;
-            header("Location: painel.php");
+            header("Location: agenda.php");
             exit();
         } else {
             $_SESSION['nao_autenticado'] = "Usuário ou senha inválidos!";
