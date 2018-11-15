@@ -22,8 +22,9 @@
             $end = filter_input(INPUT_POST, 'fim', FILTER_SANITIZE_STRING);
             $nome_cliente = filter_input(INPUT_POST, 'cliente', FILTER_SANITIZE_STRING);
             $nome_profissional = filter_input(INPUT_POST, 'profissional', FILTER_SANITIZE_STRING);
+            $preco = filter_input(INPUT_POST, 'preco_servico', FILTER_SANITIZE_STRING);
 
-            if(!empty($title) && !empty($color) && !empty($start) && !empty($end) && !empty($nome_cliente)){
+            if(!empty($title) && !empty($color) && !empty($start) && !empty($end) && !empty($nome_cliente) && !empty($preco)){
                 //Converter a data e hora do formato brasileiro para o formato do Banco de Dados
                 $data = explode(" ", $start);// tirar o espaço
                 list($date, $hora) = $data;
@@ -37,8 +38,8 @@
                 $data_sem_barra = implode("-", $data_sem_barra);
                 $end_sem_barra = $data_sem_barra . " " . $hora;
                 
-                $result_events = "INSERT INTO events (servico, cor, inicio, fim, nome_cliente, nome_profissional) VALUES 
-                ('$title', '$color', '$start_sem_barra', '$end_sem_barra', '$nome_cliente', '$nome_profissional')";
+                $result_events = "INSERT INTO events (servico, cor, inicio, fim, nome_cliente, nome_profissional, preco_servico) VALUES 
+                ('$title', '$color', '$start_sem_barra', '$end_sem_barra', '$nome_cliente', '$nome_profissional', '$preco')";
                 $resultado_events = mysqli_query($conn, $result_events); 
                 
                 if(mysqli_insert_id($conn)){ ?>

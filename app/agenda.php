@@ -42,6 +42,8 @@
             $('#detalhes-evento #id').val(events.id);
             $('#detalhes-evento #title').text(events.title);
             $('#detalhes-evento #title').val(events.title);
+            $('#detalhes-evento #preco_servico').text(events.preco);
+            $('#detalhes-evento #preco_servico').val(events.preco);
             $('#detalhes-evento #cliente').text(events.cliente);
             $('#detalhes-evento #cliente').val(events.cliente);
             $('#detalhes-evento #profissional').text(events.profissional);
@@ -72,7 +74,8 @@
 								end: '<?php echo $row_events['fim']; ?>',
                 color: '<?php echo $row_events['cor']; ?>',
                 cliente: '<?php echo  $row_events['nome_cliente']; ?>',
-                profissional: '<?php echo  $row_events['nome_profissional']; ?>'
+                profissional: '<?php echo  $row_events['nome_profissional']; ?>',
+                preco: '<?php echo  $row_events['preco_servico']; ?>'
 								},<?php
 							}
 						?>
@@ -116,7 +119,10 @@
   <body id="body-painel">
     <!-- nav do menu -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="agenda.php">Barbearia</a>  
+            <a class="navbar-brand" href="agenda.php">Barbearia</a> 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -139,16 +145,16 @@
                     Olá, <?php echo $_SESSION['usuario'];?>
                 </span>
                 <span class="navbar-text">
-                    <a class="nav-link text-danger" href="sair.php">Sair</a>
+                    <a class="nav-link text-danger" href="sair.php"><img src="imagens/shutdown.png" id="img-btn"></a>
                 </span>
             </div>
         </nav>
         <!-- nav do menu -->  
 
-   <!-- div da agenda com os horarios marcados e calendario ao lado-->     
-      <div class="contaoner">
+   <!-- div da agenda com os horarios marcados e calendario ao lado-->   
+      <div class="container">
         <div class="page-header text-center">
-          <h1>Agenda</h1>
+            <h1>Agenda</h1>                    
         </div>
         <div id='calendar'></div>
       </div>
@@ -167,6 +173,12 @@
                           <label for="inputEmail3" class="col-sm-2 control-label">Serviço</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" name="title" id="title" placeholder="Serviço a ser realizado">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputEmail3" class="col-sm-2 control-label">Preço Serviço</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="preco_servico" id="preco_servico" placeholder="Valor do serviço">
                           </div>
                         </div>
                         <div class="form-group">
@@ -226,7 +238,7 @@
                         </div>
                         <div class="form-group">
                           <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-success">Cadastrar</button>
+                            <button type="submit" class="btn btn-success"><img id="img-btn" src="imagens/calendar-add-event-button-with-plus-sign.png" alt=""> Cadastrar</button>
                           </div>
                         </div>
                       </form>
@@ -255,6 +267,8 @@
                                   <dd id="id"></dd><hr>
                                   <dt>Serviço</dt>
                                   <dd id="title"></dd><hr>
+                                  <dt>Preço do serviço</dt>
+                                  <dd id="preco_servico"></dd><hr>
                                   <dt>Cliente</dt>
                                   <dd id="cliente"></dd><hr>
                                   <dt>Profissional</dt>
@@ -264,16 +278,22 @@
                                   <dt>Fim do Evento</dt>
                                   <dd id="fim"></dd>
                               </dl>
-                              <button class="btn btn-editar btn-warning">Editar</button>
+                              <button class="btn btn-editar btn-warning"><img id="img-btn"src="imagens/edit-event.png" alt=""> Editar</button>
                             </div>
                             <!-- div de editar horario -->
                             <div class="form-editar">
                               <form class="form-horizontal" method="POST" action="edita_horario.php">
                                   <input type="hidden" class="form-control" name="id" id="id">
                               <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Titulo</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">Serviço</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" name="title" id="title" placeholder="Serviço a ser realizado">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Preço Serviço</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="preco_servico" id="preco_servico" placeholder="Valor do serviço">
                                 </div>
                               </div>
                               <div class="form-group">
@@ -332,8 +352,8 @@
                               </div>
                               <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                  <button type="submit" class="btn btn-warning">Salvar Alterações</button>
-                                  <button type="button" class="btn btn-canc-edit btn-primary">Cancelar</button>										
+                                  <button type="submit" class="btn btn-warning"><img id="img-btn" src="imagens/calendar-add-event-button-with-plus-sign.png"> Salvar Alterações</button>
+                                  <button type="button" class="btn btn-canc-edit btn-primary"><img id="img-btn" src="imagens/cancel-event.png" alt=""> Cancelar</button>										
                                 </div>
                               </div>
                             </form>

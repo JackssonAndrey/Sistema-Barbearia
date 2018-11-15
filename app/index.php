@@ -8,12 +8,17 @@
     <title>Barbearia</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/estilo.css">
+    <link rel="stylesheet" href="css/personalizado.css">
 </head>
 <body class="body-index">
+    <div class="text-center">
+        <img id="img-index" class="rounded" src="imagens/male-hair-of-head-and-face-shapes.png">
+    </div>
+    
     <div class="container"> 
         <form class="form-signin" action="valida.php" method="post">
             <div class="form-group">
-            <h2 class="form-signin-heading">ADM Barbearia</h2>
+            <h2 class="form-signin-heading text-center">ADM Barbearia</h2>
             </div>
             <div class="form-group">
                 <label class="sr-only" for="usuario">Usuário:</label>

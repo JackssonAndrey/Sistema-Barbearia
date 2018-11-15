@@ -11,11 +11,15 @@
           <title>Cliente</title>
           <link rel='stylesheet' href='node_modules/bootstrap/dist/css/estilo.css'>
           <link rel='stylesheet' href='node_modules/bootstrap/dist/css/bootstrap.css'>
+          <link rel="stylesheet" href="css/personalizado.css">
      </head>
      <body id="body-painel">
         <!-- nav do menu -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="painel.php">Barbearia</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
@@ -38,22 +42,22 @@
                     Olá, <?php echo $_SESSION['usuario'];?>
                 </span>
                 <span class="navbar-text">
-                    <a class="nav-link text-danger" href="sair.php">Sair</a>
+                    <a class="nav-link text-danger" href="sair.php"><img src="imagens/shutdown.png" id="img-btn"></a>
                 </span>
             </div>
         </nav>
         <!-- nav do menu -->
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 
                 <div class="col col-sm-12 col-md-12">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                    Adicionar Cliente
-                    </button>
+                   <img id="img-btn" src="imagens/add-user.png">Adicionar Cliente</button>
+                    
 
-                    <!-- Modal -->
+                    <!-- Modal para adicionar cliente -->
                     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -163,9 +167,9 @@
                                     data-whateveremail="<?php echo $row_cliente['email_cliente'] ?>" data-whateveraniversario="<?php echo $row_cliente['aniversario_cliente'] ?>"
                                     data-whateverconheceu="<?php echo $row_cliente['como_conheceu'] ?>" data-whateverobs="<?php echo $row_cliente['observacoes'] ?>"
                                     data-whateversexo="<?php echo $row_cliente['sexo'] ?>" data-whateverrua="<?php echo $row_cliente['rua'] ?>" data-whateverbairro="<?php echo $row_cliente['bairro'] ?>"
-                                    data-whatevernumero="<?php echo $row_cliente['numero'] ?>">Editar</button></td>
-                                    <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm">Apagar</button></td>
-                                    <td><button class="btn btn-primary" data-toggle="modal" data-target="#modal_detalhes <?php echo $row_cliente['id'] ?>">Detalhes</button></td>
+                                    data-whatevernumero="<?php echo $row_cliente['numero'] ?>"><img id="img-btn" src="imagens/pen.png" alt=""></button></td>
+                                    <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm"><img src="imagens/delete.png" id="img-btn" alt=""></button></td>
+                                    <td><button class="btn btn-primary" data-toggle="modal" data-target="#modal_detalhes <?php echo $row_cliente['id'] ?>"><img src="imagens/btn-details.png" id="img-btn" alt=""></button></td>
                                 </tr>
                                 <!-- modal de confirmação de deleção -->
                                 <div class="modal fade" id="confirm" role="dialog">
@@ -175,15 +179,15 @@
                                             <p> Deseja relamente apagar o usuário?</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <a href="deleta_cliente.php?id=<?php echo $row_cliente['id']?> "><button type="button" class="btn btn-danger" id="delete" >Apagar Registro</button></a>
-                                            <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+                                            <a href="deleta_cliente.php?id=<?php echo $row_cliente['id']?> "><button type="button" class="btn btn-danger" id="delete" ><img src="imagens/success.png" id="img-btn" alt=""> Apagar Registro</button></a>
+                                            <button type="button" data-dismiss="modal" class="btn btn-default"><img src="imagens/delete-button.png" id="img-btn" alt="">Cancelar</button>
                                         </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Modal detalhes cliente-->
                                 <div class="modal fade" id="modal_detalhes <?php echo $row_cliente['id']?>" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-xl">
+                                    <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLongTitle"><?php echo $row_cliente['nome_cliente'] ?></h5>
@@ -283,8 +287,8 @@
                                 <input type="text" class="form-control" id="recipient-numero" name="numero">
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" >Salvar</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-success" ><img src="imagens/save-button.png" id="img-btn" alt=""> Salvar</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><img src="imagens/delete-button.png" id="img-btn" alt=""> Cancelar</button>
                             </div>
                         </form>
                     </div>

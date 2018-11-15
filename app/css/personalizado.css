@@ -5,6 +5,12 @@ body {
     font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
     font-size: 14px;
 }
+
+.body-index {
+    background-color: rgb(223, 223, 223);
+    width: 600px;
+    margin: 50px auto;
+}
 #calendar {
     max-width: 900px;
     margin: 50px auto;
@@ -15,4 +21,34 @@ body {
 
 .form-editar{
 	display: none;
+}
+
+.fin-gasto-est {
+    width: 380px;
+    height: 30px;
+    background-color: rgb(245, 119, 119);
+    border-radius: 5px; 
+    padding:5px; 
+    margin:10px;
+}
+
+.fin-ganho {
+    width: 380px;
+    height: 30px;
+    background-color: rgb(90, 201, 90);
+    border-radius: 5px; 
+    padding:5px; 
+    margin:10px;
+}
+
+#img-index {
+    width:200px; 
+    height:200px;
+    margin-bottom: 20px;
+}
+
+#img-btn {
+    width: 20px;
+    height: 20px;
+    margin: 4px;
 }

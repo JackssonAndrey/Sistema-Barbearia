@@ -11,11 +11,15 @@
           <title>Profissional</title>
           <link rel='stylesheet' href='node_modules/bootstrap/dist/css/estilo.css'>
           <link rel='stylesheet' href='node_modules/bootstrap/dist/css/bootstrap.css'>
+          <link rel="stylesheet" href="css/personalizado.css">
      </head>
      <body id="body-painel">
         <!-- nav do menu -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="painel.php">Barbearia</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
@@ -38,7 +42,7 @@
                     Olá, <?php echo $_SESSION['usuario'];?>
                 </span>
                 <span class="navbar-text">
-                    <a class="nav-link text-danger" href="sair.php">Sair</a>
+                    <a class="nav-link text-danger" href="sair.php"><img src="imagens/shutdown.png" id="img-btn"></a>
                 </span>
             </div>
         </nav>
@@ -86,7 +90,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"><img src="imagens/delete-button.png" id="img-btn"> Cancelar</button>
                 
                     </div>
                 </div>
@@ -121,8 +125,9 @@
                         <td><?php echo $row_funcionario['cargo'] ?></td>
                         <td><button class="btn btn-primary" data-toggle="modal" data-target="#modal_editar" data-whatever="<?php echo $row_funcionario['id'] ?>" 
                             data-whatevernome="<?php echo $row_funcionario['nome_profissional'] ?>" data-whatevertelefone="<?php echo $row_funcionario['telefone_profissional'] ?>"
-                            data-whateveraniversario="<?php echo $row_funcionario['aniversario_profissional'] ?>" data-whatevercargo="<?php echo $row_funcionario['cargo'] ?>">Editar</button></td>
-                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm">Apagar</button></td>
+                            data-whateveraniversario="<?php echo $row_funcionario['aniversario_profissional'] ?>" data-whatevercargo="<?php echo $row_funcionario['cargo'] ?>">
+                            <img id="img-btn" src="imagens/pen.png"></button></td>
+                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm"><img src="imagens/delete.png" id="img-btn"></button></td>
                     </tr>
                 <?php }?> 
             </tbody>
@@ -135,8 +140,9 @@
                     <p> Deseja relamente apagar o profissional?</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="deleta_profissional.php?id=<?php echo $row_profissional['id']?> "><button type="button" class="btn btn-danger" id="delete" >Apagar Registro</button></a>
-                    <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+                    <a href="deleta_profissional.php?id=<?php echo $row_profissional['id']?> "><button type="button" class="btn btn-danger" id="delete">
+                        <img src="imagens/success.png" id="img-btn">Apagar Registro</button></a>
+                    <button type="button" data-dismiss="modal" class="btn btn-default"><img src="imagens/delete-button.png" id="img-btn" >Cancelar</button>
                 </div>
                 </div>
             </div>
@@ -171,8 +177,8 @@
                                 <input type="text" class="form-control" id="recipient-cargo" name="cargo">
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" >Salvar</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-success" ><img src="imagens/save-button.png" id="img-btn">Salvar</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><img src="imagens/delete-button.png" id="img-btn" >Cancelar</button>
                             </div>
                         </form>
                     </div>
