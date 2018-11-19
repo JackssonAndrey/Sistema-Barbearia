@@ -121,7 +121,7 @@
                         <td><?php echo $row_funcionario['id'] ?></td>                   
                         <td><?php echo $row_funcionario['nome_profissional'] ?></td>
                         <td><?php echo $row_funcionario['telefone_profissional'] ?></td>
-                        <td><?php echo $row_funcionario['aniversario_profissional']?></td>
+                        <td><?php echo date('d/m/Y', strtotime($row_funcionario['aniversario_profissional']));?></td>
                         <td><?php echo $row_funcionario['cargo'] ?></td>
                         <td><button class="btn btn-primary" data-toggle="modal" data-target="#modal_editar" data-whatever="<?php echo $row_funcionario['id'] ?>" 
                             data-whatevernome="<?php echo $row_funcionario['nome_profissional'] ?>" data-whatevertelefone="<?php echo $row_funcionario['telefone_profissional'] ?>"

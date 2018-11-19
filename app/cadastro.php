@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/estilo.css">
+    <link rel="stylesheet" href="css/personalizado.css">
     <title>Cadastro</title>
 </head>
-<body>
+<body class="body-index">
+    <div class="text-center">
+        <img id="img-index" class="rounded" src="imagens/male-hair-of-head-and-face-shapes.png">
+    </div>
     <div class="container">
         <form class="form-signin" action="valida_cadastro.php" method="post">
         <div class="form-group">

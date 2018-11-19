@@ -53,7 +53,7 @@
         <img src="imagens/add.png" id="img-btn" alt=""> Adicionar Produto
         </button>
 
-        <!-- Modal -->
+        <!-- Modal de cadastro de produtos -->
         <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -131,10 +131,10 @@
                             <td><?php echo $row_produto['id'] ?></td>                     
                             <td><?php echo $row_produto['nome_produto'] ?></td>
                             <td><?php echo $row_produto['quantidade'] ?></td>
-                            <td><?php echo $row_produto['valor_unitario']?></td>
-                            <td><?php echo $row_produto['valor_total']?></td>
-                            <td><?php echo $row_produto['validade'] ?></td>
-                            <td><?php echo $row_produto['data_entrada']?></td>
+                            <td><?php echo "R$ ". number_format($row_produto['valor_unitario'], 2,',','.');?></td>
+                            <td><?php echo "R$ ". number_format($row_produto['valor_total'], 2,',','.');?></td>
+                            <td><?php echo date('d/m/Y', strtotime($row_produto['validade'])); ?></td>
+                            <td><?php echo  date('d/m/Y', strtotime($row_produto['data_entrada']));?></td>
                             <td><button class="btn btn-primary" data-toggle="modal" data-target="#modal_editar" 
                             data-whatever="<?php echo $row_produto['id'] ?>" 
                             data-whatevernome="<?php echo $row_produto['nome_produto'] ?>" 

@@ -137,7 +137,7 @@
                     </div>
                     <!-- corpo da página -->
                     <?php
-                        $result_cliente = "SELECT * FROM cliente";
+                        $result_cliente = "SELECT * FROM cliente ORDER BY nome_cliente";
                         $resultado_cliente = mysqli_query($conn, $result_cliente);
                     ?>
                     <table class="table table-hover">
@@ -161,7 +161,7 @@
                                     <td><?php echo $row_cliente['nome_cliente'] ?></td>
                                     <td><?php echo $row_cliente['telefone_cliente'] ?></td>
                                     <td><?php echo $row_cliente['email_cliente'] ?></td>
-                                    <td><?php echo $row_cliente['aniversario_cliente'] ?></td>
+                                    <td><?php echo date('d/m/Y', strtotime($row_cliente['aniversario_cliente'])); ?></td>
                                     <td><button class="btn btn-primary" data-toggle="modal" data-target="#modal_editar" data-whatever="<?php echo $row_cliente['id'] ?>" 
                                     data-whatevernome="<?php echo $row_cliente['nome_cliente'] ?>" data-whatevertelefone="<?php echo $row_cliente['telefone_cliente'] ?>"
                                     data-whateveremail="<?php echo $row_cliente['email_cliente'] ?>" data-whateveraniversario="<?php echo $row_cliente['aniversario_cliente'] ?>"

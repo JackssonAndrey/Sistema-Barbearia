@@ -66,7 +66,7 @@
                            ?>
                                 <tr>
                                     <td><?php echo $row_gasto['nome_produto'] ?></td>
-                                    <td><?php echo $row_gasto['valor_total'] ?></td>
+                                    <td><?php echo "R$ ". number_format($row_gasto['valor_total'], 2,',','.'); ?></td>
                                 </tr>
                            <?php
                                 }
@@ -89,7 +89,7 @@
                         ?>
                             <tr>
                                 <td><?php echo $row_ganho['servico'] ?></td>
-                                <td><?php echo $row_ganho['preco_servico'] ?></td>
+                                <td><?php echo "R$ ". number_format($row_ganho['preco_servico'], 2,',','.'); ?></td>
                             </tr>
                         <?php
                             }
@@ -111,7 +111,7 @@
                         } ?>
                         <div class="fin-gasto-est">
                             <?php
-                                echo "valor gasto na manutenção do estoque ". $soma.",00 R$"; 
+                                echo "Valor gasto na manutenção do estoque R$ ". number_format($soma, 2,',','.'); 
                             ?>
                         </div>                                     
                 </div>
@@ -126,7 +126,7 @@
                             } ?>
                             <div class="fin-ganho">
                                 <?php
-                                    echo "valor ganho com serviços prestados ". $soma.",00 R$";  
+                                    echo "valor ganho com serviços prestados R$ ". number_format($soma, 2,',','.');  
                                 ?>                                       
                             </div>
                 </div>
