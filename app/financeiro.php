@@ -52,8 +52,8 @@
         <!-- nav do menu -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-5">
-                <table class="table table-hover table-bordered">
+                <div class="col-sm-6">
+                    <table class="table table-hover table-bordered">
                         <thead>
                             <tr>                                
                                 <th scope="col">Nome</th>
@@ -74,8 +74,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-sm-2"></div>
-                <div class="col-sm-5">                   
+                
+                <div class="col-sm-6">                   
                     <table class="table table-hover table-bordered">
                         <thead>
                             <tr>                                
@@ -101,7 +101,7 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-5">
+                <div class="col-sm-6">
                     <?php
                     //query para somar os valores da coluna valor_total da tabela produto
                         $query = "SELECT SUM(valor_total) AS valor_soma FROM produto";
@@ -115,8 +115,8 @@
                             ?>
                         </div>                                     
                 </div>
-                <div class="col-sm-2"></div>
-                <div class="col-sm-5">
+                
+                <div class="col-sm-6">
                         <?php
                         //query para somar os valores da coluna valor_total da tabela produto
                             $query = "SELECT SUM(preco_servico) AS valor_soma FROM events";

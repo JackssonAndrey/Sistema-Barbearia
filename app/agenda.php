@@ -375,5 +375,34 @@
           });
         </script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Footer --> 
+        <footer class="page-footer font-small blue"> 
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">© 2019 Copyright: Jacksson Andrey</div>  
+          <!-- Copyright -->  
+          <!-- imagem de ajuda -->
+          <div class="footer-copyright text-right py-3"><a href="" data-toggle="modal" data-target="#modal_ajuda"><img src="imagens/help-icon.png" style="margin-right:5px; padding:0px;"></a></div>              
+          <!-- imagem de ajuda -->
+        </footer> 
+        <!-- Footer -->
+        <!-- Modal -->
+        <div class="modal fade " id="modal_ajuda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sobre o sistema</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Informações para ajudar o cliente no uso do sistema.
+              </div>
+              <div class="modal-footer">
+                
+              </div>
+            </div>
+          </div>
+        </div>
   </body>
 </html>
