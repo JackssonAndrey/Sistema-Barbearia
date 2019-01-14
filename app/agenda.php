@@ -390,7 +390,7 @@
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Sobre o sistema</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ajuda sobre o sistema</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -399,7 +399,6 @@
                 Informações para ajudar o cliente no uso do sistema.
               </div>
               <div class="modal-footer">
-                
               </div>
             </div>
           </div>
